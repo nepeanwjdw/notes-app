@@ -2,10 +2,10 @@ function TestFramework() {
 
 }
 
-TestFramework.prototype.runTest = function(name) {
-  var testClass = new HelloWorld;
-  var testResult = testClass.sayHello("test");
-  var testExpectation = "Hello test"
+TestFramework.prototype.runTest = function(klass, func,  param, expectation) {
+  var testClass = eval(`new ${klass}`);
+  var testResult = eval(`testClass.${func}("${param}")`);
+  var testExpectation = expectation
   if ( testResult === testExpectation) { return "Test passed"; }
   else { return "Test failed"; }
 }
