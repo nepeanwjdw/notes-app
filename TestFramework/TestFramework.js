@@ -1,11 +1,19 @@
-function TestFramework() {
+function Test() {
 
 }
 
-TestFramework.prototype.runTest = function(klass, func,  param, expectation) {
-  var testClass = eval(`new ${klass}`);
-  var testResult = eval(`testClass.${func}("${param}")`);
-  var testExpectation = expectation
-  if ( testResult === testExpectation) { return "Test passed"; }
-  else { return "Test failed"; }
+Test.prototype.runTest = function(klass, klassParam, prop, propParam, expectation) {
+  var kParam = '';
+  var pParam = '';
+  if (klassParam != '') { kParam = `('${klassParam}')`; }
+  var testClass = eval(
+    `new ${klass}${kParam};`
+    );
+  if (propParam != '') { pParam = `('${propParam})'`; }
+  var testResult = eval(
+    `testClass.${prop}${pParam};`
+    );
+  var testExpectation = expectation;
+  if (testResult === testExpectation) { console.log('Test passed.'); }
+  else { console.log('Test failed.'); }
 }
