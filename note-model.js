@@ -1,3 +1,7 @@
 function Note(string) {
-  this._note = string;
+  this.text = string;
+}
+
+Note.prototype.returnText = function() {
+  return this.text;
 }
