@@ -1,10 +1,7 @@
 var testOne = new Test();
-
 var noteList = new NoteList();
-var firstNote = new Note("abc");
-var secondNote = new Note("def");
 
-noteList.addNote(firstNote);
-noteList.addNote(secondNote);
+noteList.addNote("abc");
+noteList.addNote("def");
 
 testOne.compareArray(noteList.viewNotes(), ["abc", "def"])
