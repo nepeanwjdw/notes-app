@@ -9,7 +9,7 @@
         notes.push(note);
       },
       viewNotes: function () {
-        var notesArray = []
+        var notesArray = [];
         for (var i = 0; i < notes.length; i++) {
           notesArray.push(notes[i].returnText());
         }
