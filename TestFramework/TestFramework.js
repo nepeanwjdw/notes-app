@@ -11,15 +11,19 @@ Test.prototype.compare = function (actual, expectation) {
 };
 
 Test.prototype.compareArray = function (actual, expectation) {
-  var differencesCounter = actual.length;
-  for (var i = 0; i < actual.length; i++) {
-    if (actual[i] === expectation[i]) {
-      differencesCounter --;
-    }
-  };
-  if (differencesCounter > 0) {
+  if (actual.length !== expectation.length) {
     console.log('Test Failed');
   } else {
-    console.log('Test Passed');
-  }
+    var differencesCounter = actual.length;
+    for (var i = 0; i < actual.length; i++) {
+      if (actual[i] === expectation[i]) {
+        differencesCounter --;
+      };
+    };
+    if (differencesCounter > 0) {
+      console.log('Test Failed');
+    } else {
+      console.log('Test Passed');
+    };
+  };
 };
