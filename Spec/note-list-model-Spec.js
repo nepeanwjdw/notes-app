@@ -1,7 +1,7 @@
-var testOne = new Test();
+var test = new Test();
 var noteList = new NoteList();
 
 noteList.addNote("abc");
 noteList.addNote("def");
 
-testOne.compareArray(noteList.viewNotes(), ["abc", "def"])
+test.compareArray(noteList.viewNotes(), ["abc", "def"])
