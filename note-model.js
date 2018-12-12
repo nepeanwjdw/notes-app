@@ -1,7 +1,14 @@
-function Note(string) {
-  this.text = string;
-}
+(function (exports) {
 
-Note.prototype.returnText = function() {
-  return this.text;
-}
+  function Note(string) {
+    var text = string;
+
+    return {
+      returnText: function() {
+        return text;
+      }
+    }
+  }
+
+  exports.Note = Note;
+})(this);
