@@ -1,9 +1,11 @@
 (function (exports) {
 
-  function OutputHTML() {
+  function OutputHTML(noteList) {
+
+    var noteList = noteList;
 
     return {
-      convert: function(noteList) {
+      convert: function() {
         var notes = noteList.viewNotes();
         var output = "";
         for (var i = 0; i < notes.length; i++) {
